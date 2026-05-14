@@ -11,7 +11,7 @@ internal sealed class AllGenericLocalizationTypeDefiner : ILocalizationTypeDefin
         var genericAttributes = type.GetCustomAttributes<UseAllGenericStringLocalizationsAttribute>();
         if (genericAttributes.Any())
         {
-            var result = new List<Type>();
+            List<Type> result = [];
 
             IEnumerable<Type> types = type.GetGenericArguments();
             while (types.Any())
