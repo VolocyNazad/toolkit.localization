@@ -7,16 +7,16 @@ using Toolkit.Localizations.Abstractions.Services;
 namespace Toolkit.Localizations.Infrastructure.Services;
 
 /// <summary>
-/// Фабрика локализации, которая в отличии от <see cref="ResourceManagerStringLocalizerFactory"/> способна выполнять поиск ресурса 
-/// локализации не только по типу <see cref="{T}"/> <see cref="IStringLocalizer{T}"/>, но и также: <br /> <br />
-///     - выполнять поиск в интерфейсах, которые использует класс, <br />
-///     - выполнять поиск в родительских классах, <br />
-///     - выполнять поиск в дженериках класса, <br />
-///     - а также использовать совсем не связанные с классом типы <br />
+/// A localization factory that, unlike <see cref="ResourceManagerStringLocalizerFactory"/>, is able to search for localization
+/// resources not only by the <see cref="{T}"/> type of <see cref="IStringLocalizer{T}"/>, but also by: <br /> <br />
+///     - searching the interfaces the class uses, <br />
+///     - searching the class's parent classes, <br />
+///     - searching the class's generic type arguments, <br />
+///     - and even using types entirely unrelated to the class <br />
 /// </summary>
 /// <remarks>
-/// Поддерживает многоуровневою проверку классов на наличие атрибутов.
-/// Использует преимущества <see cref="GenericResourceManagerStringLocalizerFactory"/>.
+/// Supports multi-level checking of classes for the presence of attributes.
+/// Takes advantage of <see cref="GenericResourceManagerStringLocalizerFactory"/>.
 /// </remarks>
 internal sealed class InheritStringLocalizerFactory(
     IEnumerable<ILocalizationTypeDefiner> localizationTypeDefiners,
@@ -38,24 +38,30 @@ internal sealed class InheritStringLocalizerFactory(
     private IStringLocalizer CreateStringLocalizer(Type type) => _cache.GetOrAdd(type, CreateStringLocalizerDirect);
     private IStringLocalizer CreateStringLocalizerDirect(Type type)
     {
-        bool isMultiLocalizer = false;
         var localizers = new List<IStringLocalizer>();
+        var visitedTypes = new HashSet<Type>();
 
-        // Локализатор для текущего типа
-        var mainLocalizer = _factory.Create(type);
-        localizers.Add(mainLocalizer);
+        AddLocalizers(type, visitedTypes, localizers);
 
+        return localizers.Count > 1
+            ? new MultiStringLocalizer(localizers)
+            : localizers[0];
+    }
+
+    private void AddLocalizers(
+        Type type,
+        HashSet<Type> visitedTypes,
+        List<IStringLocalizer> localizers)
+    {
+        if (!visitedTypes.Add(type)) return;
+
+        localizers.Add(_factory.Create(type));
         foreach (ILocalizationTypeDefiner definer in _localizationTypeDefiners)
         {
             foreach (Type dependentType in definer.Define(type))
             {
-                localizers.Add(CreateStringLocalizer(dependentType));
-                if (!isMultiLocalizer) isMultiLocalizer = true;
+                AddLocalizers(dependentType, visitedTypes, localizers);
             }
         }
-
-        return isMultiLocalizer 
-            ? new MultiStringLocalizer(localizers) 
-            : mainLocalizer;
     }
 }

@@ -8,17 +8,8 @@ internal sealed class InterfaceLocalizationTypeDefiner : ILocalizationTypeDefine
 {
     public IEnumerable<Type> Define(Type type)
     {
-        var interfaceAttributes = type.GetCustomAttributes<UseInterfacesStringLocalizationsAttribute>();
-        if (interfaceAttributes.Any())
-        {
-            var result = new List<Type>();
-
-            foreach (Type interfaceType in result)
-            {
-                result.Add(interfaceType);
-            }
-            return result;
-        }
-        return [];
+        return type.IsDefined(typeof(UseInterfacesStringLocalizationsAttribute), inherit: false)
+            ? type.GetInterfaces()
+            : [];
     }
 }
