@@ -39,7 +39,7 @@ jobs:
           8.0.x
 
     # Create the NuGet package in the folder from the environment variable NuGetDirectory
-    - run: dotnet pack --configuration Release --output ${{ env.NuGetDirectory }}
+    - run: dotnet pack src/Toolkit.Localization/Toolkit.Localization.csproj --configuration Release --output ${{ env.NuGetDirectory }}
 
     - name: Verify NuGet package
       run: |
