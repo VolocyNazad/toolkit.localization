@@ -1,13 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<ReleaseVersion>9</ReleaseVersion>
-		<AssemblyVersion>6.0.0.$(ReleaseVersion)</AssemblyVersion>
-		<FileVersion>6.0.0.$(ReleaseVersion)</FileVersion>
-		<Version>6.0.0.$(ReleaseVersion)</Version>
-	</PropertyGroup>
-
-	<PropertyGroup>
+		<MinVerMinimumMajorMinor>6.0</MinVerMinimumMajorMinor>
+		<MinVerTagPrefix>v</MinVerTagPrefix>
+		<MinVerDefaultPreReleaseIdentifiers>dev</MinVerDefaultPreReleaseIdentifiers>
 		<TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
 		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 		<PackageId>VolocyNazad.$(AssemblyName)</PackageId>
@@ -25,12 +21,16 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="MinVer" Version="8.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="6.0.0" />
 		<PackageReference Include="AutoConstructor" Version="5.6.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="PolySharp" Version="1.15">
+		<PackageReference Include="PolySharp" Version="1.16.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
