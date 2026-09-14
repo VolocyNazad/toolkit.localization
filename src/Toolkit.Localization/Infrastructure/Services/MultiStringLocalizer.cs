@@ -3,7 +3,7 @@
 namespace Toolkit.Localizations.Infrastructure.Services;
 
 /// <summary>
-/// <see cref="IStringLocalizer"/>, который поддерживает обращение к нескольким <see cref="IStringLocalizer{T}"/>
+/// An <see cref="IStringLocalizer"/> that supports delegating to multiple <see cref="IStringLocalizer{T}"/> instances.
 /// </summary>
 internal sealed class MultiStringLocalizer(List<IStringLocalizer> localizers) : IStringLocalizer
 {
@@ -30,7 +30,7 @@ internal sealed class MultiStringLocalizer(List<IStringLocalizer> localizers) : 
     {
         get
         {
-            LocalizedString? result = null;
+            var result = new LocalizedString(name, name, resourceNotFound: true);
             foreach (var localizer in _localizers)
             {
                 result = localizer[name];
@@ -46,7 +46,7 @@ internal sealed class MultiStringLocalizer(List<IStringLocalizer> localizers) : 
     {
         get
         {
-            LocalizedString? result = null;
+            var result = new LocalizedString(name, name, resourceNotFound: true);
             foreach (var localizer in _localizers)
             {
                 result = localizer[name, arguments];
