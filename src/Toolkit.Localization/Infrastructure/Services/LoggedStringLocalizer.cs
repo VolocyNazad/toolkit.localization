@@ -27,7 +27,7 @@ internal sealed class LoggedStringLocalizer<TResourceSource>(
     {
         get
         {
-            var result = base[string.Format(name, arguments)];
+            var result = base[name, arguments];
             Log(result);
             return result;
         }
