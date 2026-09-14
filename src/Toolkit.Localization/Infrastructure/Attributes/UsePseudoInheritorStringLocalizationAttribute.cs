@@ -3,7 +3,7 @@
 namespace Toolkit.Localizations.Infrastructure.Attributes;
 
 /// <summary>
-/// Используется, чтобы указать локализатору <see cref="IStringLocalizer{T}"/> дополнительный тип для поиска ресурса.
+/// Used to specify an additional type for the <see cref="IStringLocalizer{T}"/> localizer to search for a resource in.
 /// </summary>
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
 public sealed class UsePseudoInheritorStringLocalizationAttribute(Type inheritFrom) : Attribute

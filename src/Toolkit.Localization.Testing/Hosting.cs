@@ -7,32 +7,32 @@ using Toolkit.Localizations.Infrastructure.Extensions;
 
 internal sealed partial class Hosting
 {
-    #region [Host] Property - Хост приложения
+    #region [Host] Property - Application host
 
-    /// <summary> Хост приложения </summary>
+    /// <summary> Application host </summary>
     private static IHost? _host;
-    /// <summary> Хост приложения </summary>
+    /// <summary> Application host </summary>
     public static IHost Host => _host ??= CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
 
     #endregion
 
-    #region [Services] Property - Сервисы
+    #region [Services] Property - Services
 
-    /// <summary> Сервисы </summary>
+    /// <summary> Services </summary>
     public static IServiceProvider Services => Host.Services;
 
     #endregion
 
-    #region [Provider] Property - Провайдер сервисов
+    #region [Provider] Property - Service provider
 
-    /// <summary> Провайдер сервисов </summary>
+    /// <summary> Service provider </summary>
     public static IServiceProvider Provider => Host.Services;
 
     #endregion
 
-    #region [StartHost] Method - Запускаает хост приложения
+    #region [StartHost] Method - Starts the application host
 
-    /// <summary> Запускаает хост приложения </summary>
+    /// <summary> Starts the application host </summary>
     public static async void StartHost()
     {
         IHost host = Host;
@@ -42,9 +42,9 @@ internal sealed partial class Hosting
 
     #endregion
 
-    #region [StopHost] Method - Останавливает хост приложения
+    #region [StopHost] Method - Stops the application host
 
-    /// <summary> Останавливает хост приложения </summary>
+    /// <summary> Stops the application host </summary>
     public static async void StopHost()
     {
         IHost host = Host;
@@ -80,4 +80,3 @@ internal sealed partial class Hosting
     private static void ConfigureInternalServices(HostBuilderContext host, IServiceCollection services)
         => services.AddServices();
 }
-

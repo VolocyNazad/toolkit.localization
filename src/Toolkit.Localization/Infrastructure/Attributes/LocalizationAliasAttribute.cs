@@ -3,8 +3,8 @@
 namespace Toolkit.Localizations.Infrastructure.Attributes;
 
 /// <summary>
-/// Используется, чтобы указать локализатору <see cref="IStringLocalizer{T}"/> псевдоним.
-/// Поиск выполняется во всей иерархии обобщений.
+/// Used to specify an alias for the <see cref="IStringLocalizer{T}"/> localizer.
+/// The search is performed across the entire generic type hierarchy.
 /// </summary>
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
 public sealed class LocalizationAliasAttribute(string alias) : Attribute

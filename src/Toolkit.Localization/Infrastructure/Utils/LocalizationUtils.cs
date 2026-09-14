@@ -4,9 +4,9 @@ namespace Toolkit.Localizations.Infrastructure.Utils;
 
 public static class LocalizationUtils
 {
-    /// <summary> Выполняет проверку подключения ресурса локализации</summary>
-    /// <param name="localizer"> Проверяемая локализация </param>
-    /// <returns> В случае, если локализация подключена, то возвращает true, в противном случае false</returns>
+    /// <summary> Checks that the localization resource is properly connected</summary>
+    /// <param name="localizer"> The localization being checked </param>
+    /// <returns> Returns true if the localization is connected, otherwise false</returns>
     public static bool Check(IStringLocalizer localizer)
     {
         IEnumerable<LocalizedString> localizedStrings = localizer.GetAllStrings();
@@ -18,9 +18,9 @@ public static class LocalizationUtils
         return true;
     }
 
-    /// <summary> Выполняет проверку подключения ресурса локализации</summary>
-    /// <param name="localizer"> Проверяемая локализация </param>
-    /// <returns> В случае, если локализация подключена, то ничего не возвращает, в противном случае выдает исключение </returns>
+    /// <summary> Checks that the localization resource is properly connected</summary>
+    /// <param name="localizer"> The localization being checked </param>
+    /// <returns> Returns nothing if the localization is connected, otherwise throws an exception </returns>
     public static void ThrowCheck(IStringLocalizer localizer)
     {
         IEnumerable<LocalizedString> localizedStrings = localizer.GetAllStrings();

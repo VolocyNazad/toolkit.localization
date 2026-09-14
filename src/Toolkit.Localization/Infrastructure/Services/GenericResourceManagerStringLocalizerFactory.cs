@@ -7,12 +7,12 @@ using Toolkit.Localizations.Infrastructure.Attributes;
 namespace Toolkit.Localizations.Infrastructure.Services;
 
 /// <summary>
-/// Фабрика локализации, которая в отличии от <see cref="ResourceManagerStringLocalizerFactory"/> способна выполнять поиск ресурса локализации по обобщенным классам
+/// A localization factory that, unlike <see cref="ResourceManagerStringLocalizerFactory"/>, is able to search for localization resources across generic classes.
 /// </summary>
 /// <remarks>
-/// Базовая реализация <see cref="IStringLocalizerFactory"/> из коробки <see cref="GenericResourceManagerStringLocalizerFactory"/>
-/// Имеет существенный недостаток. Она не может найти ресурс, если <see cref="IStringLocalizer{T}"/> в качестве обобщенного типа имеет обобщенный тип. 
-/// Данная реализация устраняет данный недостаток
+/// The base out-of-the-box implementation of <see cref="IStringLocalizerFactory"/>, <see cref="GenericResourceManagerStringLocalizerFactory"/>,
+/// has a significant drawback: it cannot find a resource when <see cref="IStringLocalizer{T}"/>'s generic type argument is itself a generic type.
+/// This implementation addresses that drawback.
 /// </remarks>
 internal sealed class GenericResourceManagerStringLocalizerFactory(
     IOptions<LocalizationOptions> localizationOptions,
@@ -38,7 +38,7 @@ internal sealed class GenericResourceManagerStringLocalizerFactory(
         }
         else
         {
-            if (typeInfo.IsGenericType) // До 6 версии базовая библиотека не работала с дженерик типами
+            if (typeInfo.IsGenericType) // Prior to version 6, the base library did not work with generic types
             {
                 var typeName = resourceSource.Name;
                 typeName = typeName[..resourceSource.Name.IndexOf('`')];
