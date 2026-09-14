@@ -1,29 +1,110 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.10.35201.131
+# Visual Studio Version 18
+VisualStudioVersion = 18.9.12120.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolkit.Localization", "src\Toolkit.Localization\Toolkit.Localization.csproj", "{F83E372E-38AB-4072-B61C-F1A5C0632DE0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolkit.Localization.Testing", "src\Toolkit.Localization.Testing\Toolkit.Localization.Testing.csproj", "{649936BA-0AA9-7016-2A4E-5935D92C647B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{C45400C9-BFF2-4CAB-AB71-42544C868021}"
+	ProjectSection(SolutionItems) = preProject
+		docs\repository.md = docs\repository.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "policies", "policies", "{69FEA3E1-4C16-4BD4-ABF8-9E5ABB64B5D3}"
+	ProjectSection(SolutionItems) = preProject
+		docs\policies\development.md = docs\policies\development.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solutionItems", "solutionItems", "{473D4DDC-6903-46E4-9E7A-4D5BC74E4236}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		AGENTS.md = AGENTS.md
+		CHANGELOG.md = CHANGELOG.md
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+		CONTRIBUTING.md = CONTRIBUTING.md
+		NuGet.config = NuGet.config
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{AE6C874D-D537-48FA-935F-A31A0540240A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{8D69E5BA-3D4C-43AA-BB9C-DD44F7B267B9}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build-and-test.yml = .github\workflows\build-and-test.yml
+		.github\workflows\publish-nuget.yml = .github\workflows\publish-nuget.yml
+		.github\workflows\repository-policy.yml = .github\workflows\repository-policy.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{9DF71ACD-1BAA-40FD-B834-58522D036681}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\Validate-Repository.ps1 = scripts\Validate-Repository.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0AB3BF05-4346-4AA6-1389-037BE0695223}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolkit.Localization.Tests", "tests\Toolkit.Localization.Tests\Toolkit.Localization.Tests.csproj", "{B31D96DD-A8CE-435F-9B65-854B5AC9BD8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F83E372E-38AB-4072-B61C-F1A5C0632DE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F83E372E-38AB-4072-B61C-F1A5C0632DE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F83E372E-38AB-4072-B61C-F1A5C0632DE0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F83E372E-38AB-4072-B61C-F1A5C0632DE0}.Debug|x64.Build.0 = Debug|Any CPU
+		{F83E372E-38AB-4072-B61C-F1A5C0632DE0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F83E372E-38AB-4072-B61C-F1A5C0632DE0}.Debug|x86.Build.0 = Debug|Any CPU
 		{F83E372E-38AB-4072-B61C-F1A5C0632DE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F83E372E-38AB-4072-B61C-F1A5C0632DE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F83E372E-38AB-4072-B61C-F1A5C0632DE0}.Release|x64.ActiveCfg = Release|Any CPU
+		{F83E372E-38AB-4072-B61C-F1A5C0632DE0}.Release|x64.Build.0 = Release|Any CPU
+		{F83E372E-38AB-4072-B61C-F1A5C0632DE0}.Release|x86.ActiveCfg = Release|Any CPU
+		{F83E372E-38AB-4072-B61C-F1A5C0632DE0}.Release|x86.Build.0 = Release|Any CPU
 		{649936BA-0AA9-7016-2A4E-5935D92C647B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{649936BA-0AA9-7016-2A4E-5935D92C647B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{649936BA-0AA9-7016-2A4E-5935D92C647B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{649936BA-0AA9-7016-2A4E-5935D92C647B}.Debug|x64.Build.0 = Debug|Any CPU
+		{649936BA-0AA9-7016-2A4E-5935D92C647B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{649936BA-0AA9-7016-2A4E-5935D92C647B}.Debug|x86.Build.0 = Debug|Any CPU
 		{649936BA-0AA9-7016-2A4E-5935D92C647B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{649936BA-0AA9-7016-2A4E-5935D92C647B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{649936BA-0AA9-7016-2A4E-5935D92C647B}.Release|x64.ActiveCfg = Release|Any CPU
+		{649936BA-0AA9-7016-2A4E-5935D92C647B}.Release|x64.Build.0 = Release|Any CPU
+		{649936BA-0AA9-7016-2A4E-5935D92C647B}.Release|x86.ActiveCfg = Release|Any CPU
+		{649936BA-0AA9-7016-2A4E-5935D92C647B}.Release|x86.Build.0 = Release|Any CPU
+		{B31D96DD-A8CE-435F-9B65-854B5AC9BD8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B31D96DD-A8CE-435F-9B65-854B5AC9BD8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B31D96DD-A8CE-435F-9B65-854B5AC9BD8F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B31D96DD-A8CE-435F-9B65-854B5AC9BD8F}.Debug|x64.Build.0 = Debug|Any CPU
+		{B31D96DD-A8CE-435F-9B65-854B5AC9BD8F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B31D96DD-A8CE-435F-9B65-854B5AC9BD8F}.Debug|x86.Build.0 = Debug|Any CPU
+		{B31D96DD-A8CE-435F-9B65-854B5AC9BD8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B31D96DD-A8CE-435F-9B65-854B5AC9BD8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B31D96DD-A8CE-435F-9B65-854B5AC9BD8F}.Release|x64.ActiveCfg = Release|Any CPU
+		{B31D96DD-A8CE-435F-9B65-854B5AC9BD8F}.Release|x64.Build.0 = Release|Any CPU
+		{B31D96DD-A8CE-435F-9B65-854B5AC9BD8F}.Release|x86.ActiveCfg = Release|Any CPU
+		{B31D96DD-A8CE-435F-9B65-854B5AC9BD8F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{69FEA3E1-4C16-4BD4-ABF8-9E5ABB64B5D3} = {C45400C9-BFF2-4CAB-AB71-42544C868021}
+		{AE6C874D-D537-48FA-935F-A31A0540240A} = {473D4DDC-6903-46E4-9E7A-4D5BC74E4236}
+		{8D69E5BA-3D4C-43AA-BB9C-DD44F7B267B9} = {AE6C874D-D537-48FA-935F-A31A0540240A}
+		{9DF71ACD-1BAA-40FD-B834-58522D036681} = {473D4DDC-6903-46E4-9E7A-4D5BC74E4236}
+		{B31D96DD-A8CE-435F-9B65-854B5AC9BD8F} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {16DE9F25-7DE4-4A6C-8E86-8424BE1F7422}
