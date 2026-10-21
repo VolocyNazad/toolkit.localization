@@ -19,7 +19,7 @@ Read and follow the [development policy](policies/development.md) alongside this
 - Library: `Microsoft.NET.Sdk`, `netstandard2.0;netstandard2.1`, C# 14, nullable reference types, implicit usings.
 - Microsoft.Extensions.Localization 6.0.0, AutoConstructor, and PolySharp.
 - The console application targets `net9.0` and uses Microsoft.Extensions.Hosting and System.Memory.
-- Dependency versions are specified inline in each project. The library package version is derived by MinVer from stable `vMAJOR.MINOR.PATCH` Git tags; publish only tagged commits.
+- Package versions are managed centrally in `Directory.Packages.props`; test-only packages live in `tests/Directory.Packages.props`. The library package version is derived by MinVer from stable `vMAJOR.MINOR.PATCH` Git tags; publish only tagged commits.
 - No Revit API dependency. The `Testing` project is a console application, not an automated test suite; no test framework is referenced in it.
 
 ## Documentation layout

@@ -6,6 +6,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- Moved package versions to central package management (`Directory.Packages.props` and `tests/Directory.Packages.props`).
+
 ## [6.0.11] - 2026-09-14
 
 ### Fixed
