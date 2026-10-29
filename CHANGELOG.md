@@ -12,6 +12,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Document the commit message policy: the Conventional Commits type set, breaking-change markers and subject rules.
+
 - Moved package versions to central package management (`Directory.Packages.props` and `tests/Directory.Packages.props`).
 
 ## [6.0.11] - 2026-09-14
