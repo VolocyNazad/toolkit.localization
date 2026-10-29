@@ -15,6 +15,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "policies", "policies", "{69FEA3E1-4C16-4BD4-ABF8-9E5ABB64B5D3}"
 	ProjectSection(SolutionItems) = preProject
 		docs\policies\development.md = docs\policies\development.md
+		docs\policies\branching.md = docs\policies\branching.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solutionItems", "solutionItems", "{473D4DDC-6903-46E4-9E7A-4D5BC74E4236}"
@@ -33,6 +34,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solutionItems", "solutionIt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{AE6C874D-D537-48FA-935F-A31A0540240A}"
+	ProjectSection(SolutionItems) = preProject
+		.github\pull_request_template.md = .github\pull_request_template.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{8D69E5BA-3D4C-43AA-BB9C-DD44F7B267B9}"
 	ProjectSection(SolutionItems) = preProject
