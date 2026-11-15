@@ -58,7 +58,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{9DF71ACD-1BAA-40FD-B834-58522D036681}"
 	ProjectSection(SolutionItems) = preProject
+		scripts\Update-Changelog.ps1 = scripts\Update-Changelog.ps1
 		scripts\Validate-Repository.ps1 = scripts\Validate-Repository.ps1
+		scripts\Verify-Release.ps1 = scripts\Verify-Release.ps1
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0AB3BF05-4346-4AA6-1389-037BE0695223}"
