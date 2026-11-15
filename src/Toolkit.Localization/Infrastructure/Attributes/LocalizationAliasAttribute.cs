@@ -9,5 +9,8 @@ namespace Toolkit.Localizations.Infrastructure.Attributes;
 [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
 public sealed class LocalizationAliasAttribute(string alias) : Attribute
 {
+    /// <summary>
+    /// Gets or sets the alias used instead of the type name when the localizer looks for resources.
+    /// </summary>
     public string Alias { get; set; } = alias;
 }

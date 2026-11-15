@@ -2,6 +2,9 @@
 
 namespace Toolkit.Localizations.Infrastructure.Utils;
 
+/// <summary>
+/// Checks that a string localizer is connected to its resource files.
+/// </summary>
 public static class LocalizationUtils
 {
     /// <summary> Checks that the localization resource is properly connected</summary>
