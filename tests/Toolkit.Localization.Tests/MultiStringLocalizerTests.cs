@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Microsoft.Extensions.Localization;
 using Toolkit.Localizations.Infrastructure.Services;
@@ -101,7 +102,7 @@ public sealed class MultiStringLocalizerTests
                 LocalizedString value = this[name];
                 return value.ResourceNotFound
                     ? value
-                    : new LocalizedString(name, string.Format(value.Value, arguments));
+                    : new LocalizedString(name, string.Format(CultureInfo.CurrentCulture, value.Value, arguments));
             }
         }
 

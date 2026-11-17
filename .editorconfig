@@ -4,3 +4,15 @@ root = true
 charset = utf-8
 end_of_line = crlf
 trim_trailing_whitespace = true
+
+# Test methods follow the Method_Scenario_Expectation naming that the testing policy recommends, and
+# the test framework creates the test and fixture classes, so CA1812 never sees an instantiation.
+[tests/**/*.cs]
+dotnet_diagnostic.CA1707.severity = none
+dotnet_diagnostic.CA1812.severity = none
+
+# The console sample is a manual playground: it writes plain console text and resolves its services
+# from the host, so CA1303 and CA1812 do not apply to it.
+[src/Toolkit.Localization.Testing/*.cs]
+dotnet_diagnostic.CA1303.severity = none
+dotnet_diagnostic.CA1812.severity = none

@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Localization;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System.Collections.Concurrent;
@@ -8,7 +8,7 @@ namespace Toolkit.Localizations.Infrastructure.Services;
 
 /// <summary>
 /// A localization factory that, unlike <see cref="ResourceManagerStringLocalizerFactory"/>, is able to search for localization
-/// resources not only by the <see cref="{T}"/> type of <see cref="IStringLocalizer{T}"/>, but also by: <br /> <br />
+/// resources not only by the <c>T</c> type parameter of <see cref="IStringLocalizer{T}"/>, but also by: <br /> <br />
 ///     - searching the interfaces the class uses, <br />
 ///     - searching the class's parent classes, <br />
 ///     - searching the class's generic type arguments, <br />

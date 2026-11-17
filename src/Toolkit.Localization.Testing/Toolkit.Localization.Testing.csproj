@@ -3,6 +3,8 @@
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
 		<IsPackable>false</IsPackable>
+		<!-- The console sample is not part of the public API; see docs/policies/documentation.md. -->
+		<GenerateDocumentationFile>false</GenerateDocumentationFile>
 		<TargetFramework>net9.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
